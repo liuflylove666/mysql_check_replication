@@ -203,7 +203,7 @@ class CheckSums(object):
                     (self.conf.pt_table_sync, f"u={self.conf.check_user},p='{self.conf.check_pass}',h={slave_host},P={slave_port}",
                      self.sync_args_options))
                 status1, output1 = subprocess.getstatusoutput(self.sync_cmd)
-                if output1 != 0:
+                if status1 != 0:
                     sync_cmd1.append(self.sync_cmd.replace(self.conf.check_pass,'xxxxxxxx'))
 
 
